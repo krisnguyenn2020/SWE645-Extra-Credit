@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Survey Detail</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="container mt-5">
+    <h2>Survey Detail - ID {{ survey.id }}</h2>
+    <ul class="list-group">
+        <li class="list-group-item"><strong>Name:</strong> {{ survey.first_name }} {{ survey.last_name }}</li>
+        <li class="list-group-item"><strong>Email:</strong> {{ survey.email }}</li>
+        <li class="list-group-item"><strong>Address:</strong> {{ survey.street_address }}, {{ survey.city }}, {{ survey.state }} {{ survey.zip }}</li>
+        <li class="list-group-item"><strong>Telephone:</strong> {{ survey.telephone_number }}</li>
+        <li class="list-group-item"><strong>Date:</strong> {{ survey.date_of_survey }}</li>
+        <li class="list-group-item"><strong>Liked Most:</strong> {{ survey.liked_most }}</li>
+        <li class="list-group-item"><strong>Interest Source:</strong> {{ survey.interest_source }}</li>
+        <li class="list-group-item"><strong>Recommendation:</strong> {{ survey.recommendation }}</li>
+    </ul>
+
+    <a href="{% url 'survey_list' %}" class="btn btn-secondary mt-3">Back to List</a>
+</body>
+</html>
