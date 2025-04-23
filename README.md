@@ -1,6 +1,6 @@
-# SWE645 HW3 - Docker setup, EC2 Instance Setup and Kubernetes Cluster Deployment using Rancher with Jenkins CI/CD Pipeline
+# SWE645 Extra Credit - Docker setup, EC2 Instance Setup and Kubernetes Cluster Deployment using Rancher with Jenkins CI/CD Pipeline
 
-This repository contains part of the **backend** of the **SWE645 HW3** assignment, which includes Dockerfile, Jenkinsfile, YAML files, config files, and images.
+This repository contains part of the **backend** of the **SWE645 Extra Credit** assignment, which includes Dockerfile, Jenkinsfile, YAML files, config files, and images.
 
 YAML Files included for:
 - Cluster
@@ -8,7 +8,9 @@ YAML Files included for:
 - Node Port Service
 - KubeConfig
 
-These YAML Files were not modified manually, they were **auto generated** by following the steps below. YAML Files for the 3 Pods are not included because they could change if a Pod goes down. Machines from HW2 were reused, so most of this will be repeat for HW2
+These YAML Files were not modified manually, they were **auto generated** by following the steps below. YAML Files for the 3 Pods are not included because they could change if a Pod goes down. Machines from HW2 were reused, so most of this will be repeat for HW2.
+
+### **Almost all of this is exactly the same as HW3. Specfic parts, like pictures and python specific commands, will of course be updated.**
 
 ---
 
@@ -31,8 +33,8 @@ Make sure the following tools are installed:
 ### 1. Clone the repository:
 To get started, clone this repository to your local machine:
 ```
-git clone https://github.com/Ranaalshehrii/swe645-hw3.git
-cd swe645-hw3
+git clone https://github.com/krisnguyenn2020/SWE645-Extra-Credit.git
+cd SWE645-Extra-Credit
 ```
 
 ### 2. Build the application
