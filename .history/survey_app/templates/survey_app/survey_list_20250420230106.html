@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>All Surveys</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="container mt-5">
+
+    <h2 class="mb-4">All Submitted Surveys</h2>
+
+    {% if messages %}
+        {% for message in messages %}
+            <div class="alert alert-{{ message.tags }}">{{ message }}</div>
+        {% endfor %}
+    {% endif %}
+
+    <table class="table table-bordered table-striped">
+        <thead class="table-dark">
+            <tr>
+                <th>ID</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Email</th>
+                <th>Street Address</th>
+                <th>City</th>
+                <th>State</th>
+                <th>Zip</th>
+                <th>Telephone</th>
+                <th>Date</th>
+                <th>Liked Most</th>
+                <th>Interest Source</th>
+                <th>Recommendation</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for s in surveys %}
+            <tr>
+                <td>{{ s.id }}</td>
+                <td>{{ s.first_name }}</td>
+                <td>{{ s.last_name }}</td>
+                <td>{{ s.email }}</td>
+                <td>{{ s.street_address }}</td>
+                <td>{{ s.city }}</td>
+                <td>{{ s.state }}</td>
+                <td>{{ s.zip }}</td>
+                <td>{{ s.telephone_number }}</td>
+                <td>{{ s.date_of_survey }}</td>
+                <td>{{ s.liked_most }}</td>
+                <td>{{ s.interest_source }}</td>
+                <td>{{ s.recommendation }}</td>
+                <td>
+                    <a href="{% url 'update_survey' s.id %}" class="btn btn-sm btn-warning">Edit</a>
+                    <a href="{% url 'delete_survey' s.id %}" class="btn btn-sm btn-danger" onclick="return confirm('Are you sure?')">Delete</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{% url 'submit_form' %}" class="btn btn-secondary">Back to Form</a>
+
+</body>
+</html>
