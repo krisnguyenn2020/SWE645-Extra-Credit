@@ -10,7 +10,7 @@ YAML Files included for:
 
 These YAML Files were not modified manually, they were **auto generated** by following the steps below. YAML Files for the 3 Pods are not included because they could change if a Pod goes down. Machines from HW2 were reused, so most of this will be repeat for HW2.
 
-### **Almost all of this is exactly the same as HW3. Specfic parts, like pictures and python specific commands, will of course be updated.**
+### **Almost all of this is exactly the same as HW3. Specfic parts, like certain pictures and python specific commands, will of course be updated.**
 
 ---
 
@@ -24,7 +24,6 @@ Before beginning this part, please complete part 1 from Kris' branch in this rep
 
 Make sure the following tools are installed:
 - **Git**: Version control
-- **Maven**: To build the application jar file
 - **Docker**: To containerize and run the application
 - **Java**: To run the webserver and for Jenkins
 
@@ -52,6 +51,7 @@ To test the application locally, you can run the image in a container like so:
 ```
 
 Once up and running, you can test the functionality just like in Kris' branch (Part 1) in a web browser or using Postman.
+Access the local running container with this link: [http://localhost:8000/survey/form](http://localhost:8000/survey/form)
 
 Push your image to DockerHub like so:
 ```shell
@@ -64,7 +64,7 @@ Following prompts to sign in, then:
 
 If all the test run successfully, you can now setup your EC2 instances and Kubernetes Cluster like in HW2
 
-### **Steps below were reused from HW2, please make sure to use the correct image tag you created or the one we used above** 
+### **Steps below were reused from HW2, please make sure to use the correct image tag, IP addresses, and port numbers you created. These pictures are an example** 
 
 ### EC2 Instances and Kubernetes Cluster Deployment
 ### 4. Log into you AWS Account:
@@ -226,11 +226,11 @@ Once your machines are online, we can connect to the both of them. Your machines
 
 - To create a Deployment, click Workloads->Deployments and click the create button.
 
-- Fill in custom name, set replica count to 3, paste your Docker Image tag from part 1 in Container Image box. Then scroll and click 'Add Port or Service'. Select Node Port, name it, set Private Container Port to 8080. Leave everything else default. Click create and wait for pods to deploy, it will say active like our cluster before:
+- Fill in custom name, set replica count to 3, paste your Docker Image tag from part 1 in Container Image box. Then scroll and click 'Add Port or Service'. Select Node Port, name it, set Private Container Port to 8000. Leave everything else default. Click create and wait for pods to deploy, it will say active like our cluster before:
 
 ![alt text](images/pic23.png)
 
-- Once you see it active state, click Service Discovery and take a look at the node port you created. Take note of the port number that was chosen randomly since we left that option blank. In out case the port number is 31221.
+- Once you see it active state, click Service Discovery and take a look at the node port you created. Take note of the port number that was chosen randomly since we left that option blank. In out case the port number is 31845.
 
 ![alt text](images/pic24.png)
 
@@ -251,16 +251,16 @@ Once your machines are online, we can connect to the both of them. Your machines
 ![alt text](images/pic27.png)
 
 
-- With this rule added, we can now access our application using the NodePort service we created. Go back to your EC2 instances page. Select the **SECOND** machine, the one that has the actual cluster running on it. Get the Public IPv4 address, for us this is "54.205.232.217", and create the following URL: "http://54.205.232.217. 
+- With this rule added, we can now access our application using the NodePort service we created. Go back to your EC2 instances page. Select the **SECOND** machine, the one that has the actual cluster running on it. Get the Public IPv4 address, for us this is "18.210.92.130", and create the following URL: "http://18.210.92.130/. 
 
-- To access our application, we need to add specific parts to the end of this URL. You need to add ":"NodePort Number"/"desired endpoint"/ to get the responce from the database you wish. In our case, we add ":31221/survey/save" to save the survey data and ":31221/survey/all" to get all surveys from the database. 
+- To access our application, we need to add specific parts to the end of this URL. You need to add ":"NodePort Number"/"desired endpoint"/ to get the responce from the database you wish. In our case, we add ":31845/survey/form/" to get an empty form to fill out and ":31845/survey/list/" to get all surveys from the database. 
 
 **NOTE: Make sure to change form https to http or the link won't work**
 
-- Application at [link](http://54.205.232.217:31221/<endpoint>)
+- Application at: http://54.205.232.217:31221/"endpoint choice from Kris' Branch"
 
 - See Kris' Branch from Part 1 for the possible endpoints.
-- Ex. To get all surveys, visit [link](http://54.205.232.217:31221/survey/all)
+- Ex. To get all surveys, visit [link](http://18.210.92.130:31845/survey/list/)
 
 ![alt text](images/pic28.png)
 
@@ -320,6 +320,7 @@ Start and Enable Jenkids:
 
 ### 11. Access Jenkins Dashboard
 Visit Jenkins Dashboard at: http://"EC2-Public-IP":8080
+Ex: My dashboard is at: http://18.210.92.130:8080/
 
 Get the initial admin password using the following command:
 ```shell
