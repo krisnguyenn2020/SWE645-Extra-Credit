@@ -94,9 +94,10 @@ This microservice application uses a MySQL database hosted on Amazon RDS for sto
 
 - If you're using `pymysql` instead of `mysqlclient`, add the following to your app’s `__init__.py` file:
 
-```python
-import pymysql
-pymysql.install_as_MySQLdb()
+  ```python
+  import pymysql
+  pymysql.install_as_MySQLdb()
+  ```
 
 ### Result
 The Django application is now connected to a cloud-based AWS RDS MySQL database, allowing centralized storage and retrieval of student survey data. This setup supports a scalable, production-ready backend that integrates seamlessly with Docker, Kubernetes, and Jenkins for full CI/CD deployment.
