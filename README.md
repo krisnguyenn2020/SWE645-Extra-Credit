@@ -7,7 +7,14 @@ This microservice application uses a MySQL database hosted on Amazon RDS for sto
 - Logged into AWS Academy Lab.
 - Launched the lab environment and accessed the AWS Console.
 
-### Step 2: Create RDS MySQL Instance
+### Step 2: Navigate to Amazon RDS
+- **Log in to the AWS Console** through the Learner Lab environment (usually via a **"Start Lab"** button in your course).
+- Once your lab environment is running, click **"AWS"** or **"Open AWS Console"** — this takes you to the AWS Management Console.
+- In the AWS Console, use the **Search bar** at the top.
+- Type `RDS` and select **Amazon RDS** from the dropdown.
+- This takes you to the **Amazon RDS Dashboard**, where you can manage and create databases.
+  
+### Step 3: Create RDS MySQL Instance
 - Navigated to **Amazon RDS** in the AWS Console.
 - Clicked **"Create database"**.
 - Selected:
@@ -25,13 +32,13 @@ This microservice application uses a MySQL database hosted on Amazon RDS for sto
 
     ![alt text](images/4_Setting.png)
   
-### Step 3: Enable Public Access
+### Step 4: Enable Public Access
 - Set **Public Access**: `Yes` during database creation.
 - Used the **default VPC security group**.
 
   ![alt text](images/5_Public.png)
 
-### Step 4: Configure Security Group
+### Step 5: Configure Security Group
 - Open the Security Group settings page.
 
    ![alt text](images/6_Open.png)
@@ -48,7 +55,7 @@ This microservice application uses a MySQL database hosted on Amazon RDS for sto
 
       ![alt text](images/(2)9_Save.png)
 
-### Step 5: Get the RDS Endpoint URL
+### Step 6: Get the RDS Endpoint URL
 - After the database is created, go back to the **Amazon RDS dashboard**.
 - Click on your DB instance name (e.g., `student-survey-db`).
 - Under the **Connectivity & security** tab.
@@ -59,7 +66,7 @@ This microservice application uses a MySQL database hosted on Amazon RDS for sto
 
   ![alt text](images/(2)11_Endpoint.png)
   
-### Step 6: Provide Connection Details
+### Step 7: Provide Connection Details
 - Update `application.properties` by adding the following credentials:
   
   **MySQL RDS Database Config:**
