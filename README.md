@@ -70,26 +70,34 @@ This microservice application uses a MySQL database hosted on Amazon RDS for sto
 
   ![alt text](images/13_.png)
   
-### Step 7: Provide Connection Details
-- Update `application.properties` by adding the following credentials:
+### Step 7: Provide Database Connection Details
+- Update the Django `settings.py` file with the following MySQL RDS configuration:
   
   **MySQL RDS Database Config:**
   
   ```properties
-  spring.datasource.url=jdbc:mysql://student-survey-db.cdlpji3ifxr9.us-east-1.rds.amazonaws.com:3306/student-survey-db?createDatabaseIfNotExist=true
-  spring.datasource.username=admin
-  spring.datasource.password=${DB_PASSWORD}
-  ```
-  **Hibernate settings:**
-  
-  ```properties
-  spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
-  spring.jpa.hibernate.ddl-auto=update
-  spring.jpa.show-sql=true
-  spring.jpa.database-platform=org.hibernate.dialect.MySQL8Dialect
-  ```
+  DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'student-survey-db',
+        'USER': 'admin',
+        'PASSWORD': '01bYgdkHminrSaZg',
+        'HOST': 'student-survey-db.cdlpji3ifxr9.us-east-1.rds.amazonaws.com',
+        'PORT': '3306',
+      }
+  }
 
 > Note: RDS automatically creates the schema from the Spring Boot entity if `spring.jpa.hibernate.ddl-auto=update` is enabled.
+> Note:
+
+- Ensure your AWS RDS instance has **public access enabled**, and that your **security group** allows **inbound traffic on port 3306** from your IP.
+
+- If you're using `pymysql` instead of `mysqlclient`, add the following to your app’s `__init__.py` file:
+
+```python
+import pymysql
+pymysql.install_as_MySQLdb()
 
 ### Result
-The database is publicly accessible and ready to be integrated with the Spring Boot backend. This setup allows the application to store and retrieve student survey data in a centralized, cloud-based relational database.
+The Django application is now connected to a cloud-based AWS RDS MySQL database, allowing centralized storage and retrieval of student survey data. This setup supports a scalable, production-ready backend that integrates seamlessly with Docker, Kubernetes, and Jenkins for full CI/CD deployment.
+
