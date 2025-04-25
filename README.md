@@ -39,7 +39,7 @@ This microservice application uses a MySQL database hosted on Amazon RDS for sto
   ![alt text](images/5_Public.png)
 
 ### Step 5: Configure Security Group
-- Open the Security Group settings page.
+- Go to EC2 > Security Groups to open the Security Group settings page.
 
    ![alt text](images/6_Open.png)
   
