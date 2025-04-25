@@ -40,12 +40,12 @@ This microservice application uses a MySQL database hosted on Amazon RDS for sto
 - Set **Public Access**: `Yes` during database creation.
 - Used the **default VPC security group**.
 
-  ![alt text](images/5_Public.png)
+  ![alt text](images/7_.png)
 
 ### Step 5: Configure Security Group
 - Go to EC2 > Security Groups to open the Security Group settings page.
 
-   ![alt text](images/6_Open.png)
+   ![alt text](images/8_.png)
   
 - Edited **Inbound Rules** of the selected security group:
   - Added rule:
@@ -53,11 +53,11 @@ This microservice application uses a MySQL database hosted on Amazon RDS for sto
     - **Port**: 3306
     - **Source**: `0.0.0.0/0` (temporarily allowed all IPs for development)
       
-      ![alt text](images/7_Edit.png)
+      ![alt text](images/9_.png)
 
-      ![alt text](images/8_Add.png)
+      ![alt text](images/10_.png)
 
-      ![alt text](images/(2)9_Save.png)
+      ![alt text](images/11_.png)
 
 ### Step 6: Get the RDS Endpoint URL
 - After the database is created, go back to the **Amazon RDS dashboard**.
