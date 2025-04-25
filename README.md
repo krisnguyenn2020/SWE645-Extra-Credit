@@ -72,7 +72,7 @@ This microservice application uses a MySQL database hosted on Amazon RDS for sto
   **MySQL RDS Database Config:**
   
   ```properties
-  spring.datasource.url=jdbc:mysql://student-survey-db.cpo6pmgwxit1.us-east-1.rds.amazonaws.com:3306/student-survey-db?createDatabaseIfNotExist=true
+  spring.datasource.url=jdbc:mysql://student-survey-db.cdlpji3ifxr9.us-east-1.rds.amazonaws.com:3306/student-survey-db?createDatabaseIfNotExist=true
   spring.datasource.username=admin
   spring.datasource.password=${DB_PASSWORD}
   ```
