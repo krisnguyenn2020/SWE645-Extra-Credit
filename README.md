@@ -13,7 +13,7 @@ This microservice application uses a MySQL database hosted on Amazon RDS for sto
 - In the AWS Console, use the **Search bar** at the top.
 - Type `RDS` and select **Amazon RDS** from the dropdown.
 - This takes us to the **Amazon RDS Dashboard**, where we can manage and create databases.
-- 
+  
   ![alt text](images/1_.jpg)
   
 ### Step 3: Create RDS MySQL Instance
