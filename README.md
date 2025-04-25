@@ -7,6 +7,8 @@ This microservice application uses a MySQL database hosted on Amazon RDS for sto
 - Logged into AWS Academy Lab.
 - Launched the lab environment and accessed the AWS Console.
 
+  ![alt text](images/1_.jpg)
+
 ### Step 2: Navigate to Amazon RDS
 - **Log in to the AWS Console** through the Learner Lab environment (usually via a **"Start Lab"** button).
 - Once the lab environment is running, click **"AWS"** or **"Open AWS Console"** — this takes us to the AWS Management Console.
@@ -14,7 +16,7 @@ This microservice application uses a MySQL database hosted on Amazon RDS for sto
 - Type `RDS` and select **Amazon RDS** from the dropdown.
 - This takes us to the **Amazon RDS Dashboard**, where we can manage and create databases.
   
-  ![alt text](images/1_.jpg)
+  ![alt text](images/2_.jpg)
   
 ### Step 3: Create RDS MySQL Instance
 - Navigated to **Amazon RDS** in the AWS Console.
