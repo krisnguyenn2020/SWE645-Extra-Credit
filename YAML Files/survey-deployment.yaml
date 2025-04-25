@@ -2,11 +2,11 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   annotations:
-    deployment.kubernetes.io/revision: '2'
+    deployment.kubernetes.io/revision: '1'
     field.cattle.io/publicEndpoints: >-
-      [{"addresses":["172.31.38.206"],"port":31221,"protocol":"TCP","serviceName":"default:survey-deployment-nodeport","allNodes":true}]
-  creationTimestamp: '2025-02-27T20:02:04Z'
-  generation: 3
+      [{"addresses":["172.31.39.123"],"port":31845,"protocol":"TCP","serviceName":"default:survey-deployment-nodeport","allNodes":true}]
+  creationTimestamp: '2025-04-25T22:23:30Z'
+  generation: 2
   labels:
     workload.user.cattle.io/workloadselector: apps.deployment-default-survey-deployment
   managedFields:
@@ -15,7 +15,6 @@ metadata:
       fieldsV1:
         f:metadata:
           f:annotations:
-            .: {}
             f:field.cattle.io/publicEndpoints: {}
           f:labels:
             .: {}
@@ -47,7 +46,7 @@ metadata:
                   f:name: {}
                   f:ports:
                     .: {}
-                    k:{"containerPort":8080,"protocol":"TCP"}:
+                    k:{"containerPort":8000,"protocol":"TCP"}:
                       .: {}
                       f:containerPort: {}
                       f:name: {}
@@ -68,12 +67,13 @@ metadata:
               f:terminationGracePeriodSeconds: {}
       manager: agent
       operation: Update
-      time: '2025-02-28T00:14:02Z'
+      time: '2025-04-25T22:23:30Z'
     - apiVersion: apps/v1
       fieldsType: FieldsV1
       fieldsV1:
         f:metadata:
           f:annotations:
+            .: {}
             f:deployment.kubernetes.io/revision: {}
         f:status:
           f:availableReplicas: {}
@@ -102,11 +102,11 @@ metadata:
       manager: kube-controller-manager
       operation: Update
       subresource: status
-      time: '2025-02-28T00:14:11Z'
+      time: '2025-04-25T22:23:41Z'
   name: survey-deployment
   namespace: default
-  resourceVersion: '30540'
-  uid: b841d8c7-7e7a-43ec-a1f2-cc761cf3b2d4
+  resourceVersion: '6136'
+  uid: b3e1baaf-5848-4e4e-9531-10f76de4895b
 spec:
   progressDeadlineSeconds: 600
   replicas: 3
@@ -128,12 +128,12 @@ spec:
     spec:
       affinity: {}
       containers:
-        - image: ranaalshehri/swe645-hw2-student-survey-amd64:latest
+        - image: ranaalshehri/swe645-extracredit-app-amd64:latest
           imagePullPolicy: Always
           name: container-0
           ports:
-            - containerPort: 8080
-              name: service-port
+            - containerPort: 8000
+              name: nodeport
               protocol: TCP
           resources: {}
           securityContext:
@@ -151,19 +151,19 @@ spec:
 status:
   availableReplicas: 3
   conditions:
-    - lastTransitionTime: '2025-02-27T20:02:07Z'
-      lastUpdateTime: '2025-02-27T20:02:07Z'
+    - lastTransitionTime: '2025-04-25T22:23:41Z'
+      lastUpdateTime: '2025-04-25T22:23:41Z'
       message: Deployment has minimum availability.
       reason: MinimumReplicasAvailable
       status: 'True'
       type: Available
-    - lastTransitionTime: '2025-02-27T20:02:05Z'
-      lastUpdateTime: '2025-02-28T00:14:11Z'
-      message: ReplicaSet "survey-deployment-855bccbd48" has successfully progressed.
+    - lastTransitionTime: '2025-04-25T22:23:30Z'
+      lastUpdateTime: '2025-04-25T22:23:41Z'
+      message: ReplicaSet "survey-deployment-857b495465" has successfully progressed.
       reason: NewReplicaSetAvailable
       status: 'True'
       type: Progressing
-  observedGeneration: 3
+  observedGeneration: 2
   readyReplicas: 3
   replicas: 3
   updatedReplicas: 3

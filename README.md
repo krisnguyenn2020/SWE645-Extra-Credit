@@ -37,31 +37,18 @@ git clone https://github.com/krisnguyenn2020/SWE645-Extra-Credit.git
 cd SWE645-Extra-Credit
 ```
 
-### 2. Build the application
+### 2. Build, run, and push Docker image
 
-Run the following command to build the jar file. Make sure you are in the directory specified above:
+Unlike HW 3, there is no need to build a jar file since this application is python based, so we can just build the docker image like so:
 ```shell
-    $ mvn clean package -DskipTests
-```
-
-This will build and generate the jar file under the target/ directory.
-Check that this jar file exist in the target directory before continuing:
-
-- student-survey-0.0.1-SNAPSHOT.jar
-
-
-### 3. Build, run, and push Docker image
-
-Once you have validated the jar file or solved and issues with the build, execute the following command in the same directory as before using the included Dockerfile:
-```shell
-    $ docker build -t ranaalshehri/swe645-hw3-springboot-app-amd64:latest .
+    $ docker build -t ranaalshehri/swe645-extracredit-app-amd64:latest .
 ```
 
 You should see the new image pop up on docker desktop.
 
 To test the application locally, you can run the image in a container like so:
 ```shell
-    $ docker run -d -p 8080:8080 ranaalshehri/swe645-hw3-springboot-app-amd64
+    $ docker run -d -p 8000:8000 ranaalshehri/swe645-extracredit-app-amd64:latest
 ```
 
 Once up and running, you can test the functionality just like in Kris' branch (Part 1) in a web browser or using Postman.
@@ -72,7 +59,7 @@ Push your image to DockerHub like so:
 ```
 Following prompts to sign in, then:
 ```shell
-    $ docker push ranaalshehri/swe645-hw3-springboot-app-amd64:latest
+    $ docker push ranaalshehri/swe645-extracredit-app-amd64:latest
 ```
 
 If all the test run successfully, you can now setup your EC2 instances and Kubernetes Cluster like in HW2
@@ -332,7 +319,7 @@ Start and Enable Jenkids:
 ```
 
 ### 11. Access Jenkins Dashboard
-Visit Jenkins Dashboard at: [link](http://<EC2-Public-IP>:8080>)
+Visit Jenkins Dashboard at: http://"EC2-Public-IP":8080
 
 Get the initial admin password using the following command:
 ```shell

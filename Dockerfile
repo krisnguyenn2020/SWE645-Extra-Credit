@@ -1,14 +1,33 @@
 # Base image
-FROM openjdk:17-jdk
+FROM python:3.12.0b3-slim-bookworm
+
+# Create app directory
+RUN mkdir /app
+
+# Set app directory as working directory
+WORKDIR /app
+
+# Set environment variables
+# Prevents Python from writing pyc files to disk
+ENV PYTHONDONTWRITEBYTECODE=1
+#Prevents Python from buffering stdout and stderr
+ENV PYTHONUNBUFFERED=1
+
+# Update linux packages
+RUN apt-get update && apt-get install -y libpq-dev
+
+# Copy entire project folder to app folder
+COPY . /app
+
+# Upgrade python package installer
+RUN pip install --upgrade pip
+
+# Install django project dependencies
+RUN pip install -r requirements.txt
+
 
 # Expose port for application
-EXPOSE 8080
-
-# Set arguement for jar file
-ARG JAR_FILE=target/student-survey-0.0.1-SNAPSHOT.jar
-
-# Copy to current directory 
-COPY ${JAR_FILE} .
+EXPOSE 8000
 
 # Command to run application
-CMD [ "java", "-jar",  "student-survey-0.0.1-SNAPSHOT.jar"]
+CMD [ "python3", "manage.py",  "runserver", "0.0.0.0:8000"]

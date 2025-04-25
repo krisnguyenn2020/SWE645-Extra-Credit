@@ -4,7 +4,7 @@ metadata:
   annotations:
     field.cattle.io/targetWorkloadIds: '["default/survey-deployment"]'
     management.cattle.io/ui-managed: 'true'
-  creationTimestamp: '2025-02-27T11:09:38Z'
+  creationTimestamp: '2025-04-25T22:23:30Z'
   managedFields:
     - apiVersion: v1
       fieldsType: FieldsV1
@@ -18,7 +18,7 @@ metadata:
           f:internalTrafficPolicy: {}
           f:ports:
             .: {}
-            k:{"port":8080,"protocol":"TCP"}:
+            k:{"port":8000,"protocol":"TCP"}:
               .: {}
               f:name: {}
               f:port: {}
@@ -29,24 +29,24 @@ metadata:
           f:type: {}
       manager: agent
       operation: Update
-      time: '2025-02-27T11:09:38Z'
+      time: '2025-04-25T22:23:30Z'
   name: survey-deployment
   namespace: default
-  resourceVersion: '4363'
-  uid: 3579b31d-23ca-4a64-b42b-67888ac8b1be
+  resourceVersion: '6031'
+  uid: f16630c8-4aaf-4a30-9952-c09ca8a96486
 spec:
-  clusterIP: 10.43.31.130
+  clusterIP: 10.43.64.155
   clusterIPs:
-    - 10.43.31.130
+    - 10.43.64.155
   internalTrafficPolicy: Cluster
   ipFamilies:
     - IPv4
   ipFamilyPolicy: SingleStack
   ports:
-    - name: service-port
-      port: 8080
+    - name: nodeport
+      port: 8000
       protocol: TCP
-      targetPort: 8080
+      targetPort: 8000
   selector:
     workload.user.cattle.io/workloadselector: apps.deployment-default-survey-deployment
   sessionAffinity: None

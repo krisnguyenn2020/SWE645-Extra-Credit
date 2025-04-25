@@ -2,8 +2,9 @@ apiVersion: provisioning.cattle.io/v1
 kind: Cluster
 metadata:
   annotations:
-    field.cattle.io/creatorId: user-p9hjq
-  creationTimestamp: '2025-02-27T11:00:20Z'
+    field.cattle.io/creatorId: user-wjk59
+    provisioning.cattle.io/management-cluster-display-name: swe-extra-credit
+  creationTimestamp: '2025-04-25T22:08:54Z'
   finalizers:
     - wrangler.cattle.io/provisioning-cluster-remove
     - wrangler.cattle.io/rke-cluster-remove
@@ -14,6 +15,8 @@ metadata:
       fieldsType: FieldsV1
       fieldsV1:
         f:metadata:
+          f:annotations:
+            f:provisioning.cattle.io/management-cluster-display-name: {}
           f:finalizers:
             .: {}
             v:"wrangler.cattle.io/provisioning-cluster-remove": {}
@@ -72,16 +75,16 @@ metadata:
                 f:timeout: {}
       manager: rancher
       operation: Update
-      time: '2025-02-27T11:00:20Z'
+      time: '2025-04-25T22:08:55Z'
     - apiVersion: provisioning.cattle.io/v1
       fieldsType: FieldsV1
       fieldsV1:
         f:metadata:
           f:finalizers:
             v:"wrangler.cattle.io/cloud-config-secret-remover": {}
-      manager: rancher-v2.10.2-secret-migrator
+      manager: rancher-v2.11.1-secret-migrator
       operation: Update
-      time: '2025-02-27T11:00:20Z'
+      time: '2025-04-25T22:08:56Z'
     - apiVersion: provisioning.cattle.io/v1
       fieldsType: FieldsV1
       fieldsV1:
@@ -97,13 +100,13 @@ metadata:
       manager: rancher
       operation: Update
       subresource: status
-      time: '2025-03-05T07:04:31Z'
-  name: swe645-hw2
+      time: '2025-04-25T22:52:35Z'
+  name: swe-extra-credit
   namespace: fleet-default
-  resourceVersion: '63993'
-  uid: 8801093b-f1e2-4c21-bdcf-46e74719867c
+  resourceVersion: '18206'
+  uid: 7d05d5c3-8746-41f4-b2b9-31001b9746fc
 spec:
-  kubernetesVersion: v1.31.5+rke2r1
+  kubernetesVersion: v1.32.3+rke2r1
   localClusterAuthEndpoint: {}
   rkeConfig:
     chartValues:
@@ -150,81 +153,81 @@ spec:
         timeout: 120
 status:
   agentDeployed: true
-  clientSecretName: swe645-hw2-kubeconfig
-  clusterName: c-m-q4fbhhkw
+  clientSecretName: swe-extra-credit-kubeconfig
+  clusterName: c-m-7btz9pxx
   conditions:
-    - lastUpdateTime: '2025-02-27T11:03:40Z'
+    - lastUpdateTime: '2025-04-25T22:12:07Z'
       status: 'False'
       type: Reconciling
-    - lastUpdateTime: '2025-02-27T11:00:20Z'
+    - lastUpdateTime: '2025-04-25T22:08:55Z'
       status: 'False'
       type: Stalled
-    - lastUpdateTime: '2025-03-05T05:45:33Z'
+    - lastUpdateTime: '2025-04-25T22:52:24Z'
       status: 'True'
       type: Created
-    - lastUpdateTime: '2025-03-05T07:04:31Z'
+    - lastUpdateTime: '2025-04-25T22:52:35Z'
       status: 'True'
       type: RKECluster
-    - lastUpdateTime: '2025-02-27T11:00:20Z'
+    - lastUpdateTime: '2025-04-25T22:08:55Z'
       status: 'True'
       type: BackingNamespaceCreated
-    - lastUpdateTime: '2025-02-27T11:00:20Z'
+    - lastUpdateTime: '2025-04-25T22:08:55Z'
       status: 'True'
       type: DefaultProjectCreated
-    - lastUpdateTime: '2025-02-27T11:00:20Z'
+    - lastUpdateTime: '2025-04-25T22:08:56Z'
       status: 'True'
       type: SystemProjectCreated
-    - lastUpdateTime: '2025-02-27T11:00:20Z'
-      status: 'True'
-      type: InitialRolesPopulated
-    - lastUpdateTime: '2025-03-05T07:04:31Z'
+    - lastUpdateTime: '2025-04-25T22:52:25Z'
       status: 'True'
       type: Updated
-    - lastUpdateTime: '2025-03-05T07:04:31Z'
+    - lastUpdateTime: '2025-04-25T22:52:25Z'
       status: 'True'
       type: Provisioned
-    - lastUpdateTime: '2025-03-05T05:45:46Z'
+    - lastUpdateTime: '2025-04-25T22:52:35Z'
       status: 'True'
       type: Ready
-    - lastUpdateTime: '2025-02-27T11:00:21Z'
+    - lastUpdateTime: '2025-04-25T22:08:56Z'
+      status: 'True'
+      type: InitialRolesPopulated
+    - lastUpdateTime: '2025-04-25T22:08:57Z'
       status: 'True'
       type: CreatorMadeOwner
-    - lastUpdateTime: '2025-02-27T11:00:22Z'
+    - lastUpdateTime: '2025-04-25T22:08:57Z'
       status: 'True'
       type: NoDiskPressure
-    - lastUpdateTime: '2025-02-27T11:00:22Z'
+    - lastUpdateTime: '2025-04-25T22:08:57Z'
       status: 'True'
       type: NoMemoryPressure
-    - lastUpdateTime: '2025-02-27T11:00:22Z'
+    - lastUpdateTime: '2025-04-25T22:08:57Z'
       status: 'True'
       type: SecretsMigrated
-    - lastUpdateTime: '2025-02-27T11:00:22Z'
-      status: 'True'
-      type: ServiceAccountSecretsMigrated
-    - lastUpdateTime: '2025-02-27T11:00:22Z'
-      status: 'True'
-      type: RKESecretsMigrated
-    - lastUpdateTime: '2025-02-27T11:00:22Z'
-      status: 'True'
-      type: ACISecretsMigrated
-    - lastUpdateTime: '2025-03-05T05:45:33Z'
+    - lastUpdateTime: '2025-04-25T22:52:24Z'
       status: 'True'
       type: Connected
+    - lastUpdateTime: '2025-04-25T22:08:57Z'
+      status: 'True'
+      type: ServiceAccountSecretsMigrated
+    - lastUpdateTime: '2025-04-25T22:08:58Z'
+      status: 'True'
+      type: RKESecretsMigrated
+    - lastUpdateTime: '2025-04-25T22:08:58Z'
+      status: 'True'
+      type: ACISecretsMigrated
     - status: Unknown
       type: PreBootstrapped
-    - lastUpdateTime: '2025-02-27T11:03:24Z'
+    - lastUpdateTime: '2025-04-25T22:11:38Z'
       status: 'True'
       type: AgentTlsStrictCheck
-    - lastUpdateTime: '2025-02-27T11:03:25Z'
+    - lastUpdateTime: '2025-04-25T22:11:38Z'
       status: 'True'
       type: SystemAccountCreated
-    - lastUpdateTime: '2025-02-27T11:03:27Z'
+    - lastUpdateTime: '2025-04-25T22:11:40Z'
       status: 'True'
       type: AgentDeployed
-    - lastUpdateTime: '2025-02-27T11:03:27Z'
+    - lastUpdateTime: '2025-04-25T22:11:40Z'
       status: 'True'
       type: GlobalAdminsSynced
-    - lastUpdateTime: '2025-02-27T11:03:39Z'
+    - lastUpdateTime: '2025-04-25T22:12:07Z'
       status: 'True'
       type: Waiting
   fleetWorkspaceName: fleet-default

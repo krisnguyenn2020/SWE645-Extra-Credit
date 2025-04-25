@@ -3,21 +3,13 @@ pipeline {
     
     environment {
         DOCKER_CREDS = credentials('docker-pass')
-        DOCKER_REPO = "ranaalshehri/swe645-hw3-springboot-app-amd64"
-        JAR_OUTPUT = "target/student-survey-0.0.1-SNAPSHOT.jar"
+        DOCKER_REPO = "ranaalshehri/swe645-extracredit-app-amd64"
     }
     
     stages {
         stage('Checkout') {
             steps {
                 checkout scm
-            }
-        }
-        
-        stage('Build JAR') {
-            steps {
-                sh "mvn clean package -DskipTests"
-                sh "ls -lh ${JAR_OUTPUT}"
             }
         }
         

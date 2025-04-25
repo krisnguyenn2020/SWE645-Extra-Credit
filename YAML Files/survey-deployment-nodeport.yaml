@@ -3,10 +3,10 @@ kind: Service
 metadata:
   annotations:
     field.cattle.io/publicEndpoints: >-
-      [{"addresses":["172.31.38.206"],"port":31221,"protocol":"TCP","serviceName":"default:survey-deployment-nodeport","allNodes":true}]
+      [{"addresses":["172.31.39.123"],"port":31845,"protocol":"TCP","serviceName":"default:survey-deployment-nodeport","allNodes":true}]
     field.cattle.io/targetWorkloadIds: '["default/survey-deployment"]'
     management.cattle.io/ui-managed: 'true'
-  creationTimestamp: '2025-02-27T11:09:38Z'
+  creationTimestamp: '2025-04-25T22:23:30Z'
   managedFields:
     - apiVersion: v1
       fieldsType: FieldsV1
@@ -22,7 +22,7 @@ metadata:
           f:internalTrafficPolicy: {}
           f:ports:
             .: {}
-            k:{"port":8080,"protocol":"TCP"}:
+            k:{"port":8000,"protocol":"TCP"}:
               .: {}
               f:name: {}
               f:port: {}
@@ -33,26 +33,26 @@ metadata:
           f:type: {}
       manager: agent
       operation: Update
-      time: '2025-02-27T11:09:38Z'
+      time: '2025-04-25T22:23:30Z'
   name: survey-deployment-nodeport
   namespace: default
-  resourceVersion: '4370'
-  uid: 72adccac-118f-441b-99cd-1407e52948b5
+  resourceVersion: '6039'
+  uid: 32a6680d-2d2e-494a-99d5-46154f814cc0
 spec:
-  clusterIP: 10.43.127.90
+  clusterIP: 10.43.28.171
   clusterIPs:
-    - 10.43.127.90
+    - 10.43.28.171
   externalTrafficPolicy: Cluster
   internalTrafficPolicy: Cluster
   ipFamilies:
     - IPv4
   ipFamilyPolicy: SingleStack
   ports:
-    - name: service-port
-      nodePort: 31221
-      port: 8080
+    - name: nodeport
+      nodePort: 31845
+      port: 8000
       protocol: TCP
-      targetPort: 8080
+      targetPort: 8000
   selector:
     workload.user.cattle.io/workloadselector: apps.deployment-default-survey-deployment
   sessionAffinity: None
