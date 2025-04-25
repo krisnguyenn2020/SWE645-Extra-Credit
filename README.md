@@ -87,12 +87,16 @@ This microservice application uses a MySQL database hosted on Amazon RDS for sto
       }
   }
 
-> Note: RDS automatically creates the schema from the Spring Boot entity if `spring.jpa.hibernate.ddl-auto=update` is enabled.
-> Note:
-
-- Ensure your AWS RDS instance has **public access enabled**, and that your **security group** allows **inbound traffic on port 3306** from your IP.
-
-- If you're using `pymysql` instead of `mysqlclient`, add the following to your app’s `__init__.py` file:
+> **Note:**
+> 
+> - Ensure your AWS RDS instance has **public access enabled**, and that your **security group** allows **inbound traffic on port 3306** from your IP.
+> 
+> - If you're using `pymysql` instead of `mysqlclient`, add the following to your app’s `__init__.py` file:
+> 
+> ```python
+> import pymysql
+> pymysql.install_as_MySQLdb()
+> ```
 
   ```python
   import pymysql
