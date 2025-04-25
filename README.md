@@ -89,19 +89,14 @@ This microservice application uses a MySQL database hosted on Amazon RDS for sto
 
 > **Note:**
 > 
-> - Ensure your AWS RDS instance has **public access enabled**, and that your **security group** allows **inbound traffic on port 3306** from your IP.
+> - Ensure that the AWS RDS instance has **public access enabled**, and that the **security group** allows **inbound traffic on port 3306** from our IP.
 > 
-> - If you're using `pymysql` instead of `mysqlclient`, add the following to your app’s `__init__.py` file:
+> - If we're using `pymysql` instead of `mysqlclient`, add the following to our app’s `__init__.py` file:
 > 
 > ```python
 > import pymysql
 > pymysql.install_as_MySQLdb()
 > ```
-
-  ```python
-  import pymysql
-  pymysql.install_as_MySQLdb()
-  ```
 
 ### Result
 The Django application is now connected to a cloud-based AWS RDS MySQL database, allowing centralized storage and retrieval of student survey data. This setup supports a scalable, production-ready backend that integrates seamlessly with Docker, Kubernetes, and Jenkins for full CI/CD deployment.
